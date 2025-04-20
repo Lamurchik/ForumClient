@@ -1,0 +1,126 @@
+/* main.css - базовые стили, которые используются во всем проекте */
+
+/* Сброс стилей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --background-color : #1e1e1e;
+    --text-color : #ffffff;
+    --calm-text-color :#aba7a7;
+  }
+  
+  /* Основные стили для тела документа */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Стили для ссылок */
+  a {
+    color: #64b5f6;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #90caf9;
+  }
+  
+  /* Заголовки */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  /* Параграфы */
+  p {
+    margin-bottom: 15px;
+  }
+  
+  /* Стили для форм и полей ввода */
+  input, button, textarea, select {
+    font-family: inherit;
+    font-size: 1em;
+  }
+  
+  /* Стили для кнопок */
+  button {
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Утилитарный класс для скрытия элементов */
+  .hidden {
+    display: none;
+  }
+  
+
+
+  /* Селектор по id контейнера редактора */
+/* Общая оболочка редактора */
+#cke_editor1 {
+  width: 800px;
+  margin: 40px auto; /* центрирование и отступы */
+  border: 2px solid #2e2e2e;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Тулбар */
+#cke_editor1 .cke_top {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid #444;
+}
+
+/* Иконки */
+#cke_editor1 .cke_button_icon {
+  filter: brightness(3); /* делает иконки более светлыми */
+}
+
+/* Подписи кнопок (если есть) */
+#cke_editor1 .cke_combo_text,
+#cke_editor1 .cke_combo_open,
+#cke_editor1 .cke_button_label {
+  color: #ffffff !important;
+}
+
+/* Область редактирования */
+#cke_editor1 .cke_contents {
+  background: #1e1e1e;
+  padding: 0;
+  border-top: 1px solid #333;
+}
+
+#cke_editor1 .cke_contents iframe {
+  background-color: #1e1e1e;
+  color-scheme: dark;
+  color: #fff;
+  min-height: 250px;
+  border: none;
+}
+
+/* Подвал */
+#cke_editor1 .cke_bottom {
+  background-color: #2b2b2b;
+  color: #ccc;
+  padding: 4px;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+#cke_editor1 .cke_toolgroup {
+  background-color: transparent !important;
+}
+

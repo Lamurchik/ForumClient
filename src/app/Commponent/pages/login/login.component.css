@@ -1,0 +1,112 @@
+/* Основные стили для контейнера */
+.login-container {
+    max-width: 400px;
+    margin: 10vh auto;
+    transform: translateY(20%);
+    padding: 2rem;
+    background-color: #2d2d2d; /* Тёмный фон */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Заголовок формы */
+  h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Стили для групп полей ввода */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Общие стили для полей ввода */
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #404040; /* Тёмный фон поля */
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 4px rgba(100, 100, 100, 0.5);
+  }
+  
+  /* Контейнер для поля пароля и глазка */
+  .password-input {
+    position: relative;
+  }
+  
+  /* Стили для кнопки-глазка */
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .toggle-password:hover {
+    color: #fff;
+  }
+  
+  /* Стили для кнопки отправки */
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007bff; /* Синий цвет кнопки */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+
+
+  /* Анимация моргания для закрытого глазка */
+@keyframes blink {
+    0% { opacity: 1; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.3; transform: translateY(-50%) scale(0.8); }
+    100% { opacity: 1; transform: translateY(-50%) scale(1); }
+  }
+  
+  /* Применяем анимацию только когда пароль скрыт */
+  .toggle-password.closed {
+    animation: blink 0.3s ease-in-out;
+  }
+  
+  /* Меняем иконку на "закрытый глаз" (юникод) */
+  .toggle-password.closed::after {
+    content: ""; /* Альтернатива: можно использовать SVG */
+  }
+
+  .link {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    text-decoration: none;
+    padding-top: 5%;
+    padding-bottom: 0%;
+  }
+  

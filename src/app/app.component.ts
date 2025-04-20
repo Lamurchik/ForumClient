@@ -1,14 +1,17 @@
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Component } from "@angular/core";
-import {FormsModule} from "@angular/forms";
-     
+import { RouterModule } from "@angular/router";
+import { GraphQLService } from "./services/grapql.service";
+
 @Component({
-    selector: "my-app",
+    selector: "app-root",
     standalone: true,
-    imports: [FormsModule],
-    template: `<label>Введите имя:</label>
-                 <input [(ngModel)]="name" placeholder="name">
-                 <h1>Добро пожаловать {{name}}!</h1>`
+    imports: [RouterModule, HttpClientModule], 
+    template: `          
+            <router-outlet></router-outlet>       
+    `,
+    providers: [GraphQLService]
 })
 export class AppComponent { 
-    name= "";
+    name = "AppComponent";
 }

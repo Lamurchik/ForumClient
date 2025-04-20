@@ -1,0 +1,12 @@
+/* Контейнер ленты постов */
+.post-feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Расстояние между постами */
+    padding: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #1a1313c7;/* Тёмный фон */
+    border-radius: 8px;
+  }
+  

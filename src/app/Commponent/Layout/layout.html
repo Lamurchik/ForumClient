@@ -1,0 +1,65 @@
+<!-- Основной контейнер страницы -->
+
+<div class="container">
+    <!-- Шапка сайта -->
+    <header>
+      <!-- Левая часть шапки: логотип и навигация по категориям -->
+      <div class="header-left">
+        <!-- Логотип, переход на главную страницу -->
+        <div class="logo">
+          <a href="index.html">Логотип</a>
+        </div>
+        <!-- Основные навигационные ссылки -->
+        <nav class="main-nav">
+          <a href="#categories">Категории</a>
+          <a href="#recommendations">Рекомендации</a>
+          <a href="#new">Новинки</a>
+        </nav>
+      </div>
+      <!-- Центральная часть шапки: поисковая форма -->
+      <div class="header-center">
+        <form action="/search" method="get">
+          <input type="text" placeholder="Поиск..." name="query">
+          <button type="submit">Найти</button>
+        </form>
+      </div>
+      <!-- Правая часть шапки: ссылки для пользователя -->
+      <div class="header-right">
+        <nav class="user-nav">
+          <a href="login">Вход</a>
+          <a href="#profile">Личный кабинет</a>
+          <a href="editor">написать пост</a>
+          <a href="#notifications">Уведомления</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+      <!-- Информация для обратной связи -->
+      <div class="contact-info">
+        <p>Обратная связь:</p>
+        <p>Почта: <a href="mailto:contact&#64;example.com">contact&#64;example.com</a></p>
+        <p>Телефон: <a href="tel:+123456789">+1 (234) 567-89</a></p>
+        <p>Соц. сети:
+          <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+          <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+          <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </p>
+      </div>
+      <!-- Дополнительный блок: ссылки на правила форума и информацию о проекте -->
+      <!-- Этот блок может быть полезен для быстрого доступа пользователя к правилам и описанию проекта.
+           Если вам не понадобятся такие ссылки, просто удалите этот раздел. -->
+      <div class="footer-extra">
+        <a href="#rules">Правила форума</a> |
+        <a href="#about">О проекте</a>
+      </div>
+    </footer>
+  </div>

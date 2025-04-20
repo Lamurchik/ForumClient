@@ -1,0 +1,88 @@
+/* Основной контейнер карточки */
+.post-card {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px auto;
+    width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Верхняя панель: автор и дата */
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-bottom: 8px;
+  }
+  
+  /* Заголовок поста */
+  .post-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  /* Тэги */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;           /* Разрешаем перенос строк */
+    gap: 8px;                  /* Отступ между тегами */
+    margin: 8px 0;
+  }
+  
+  .tag {
+    background-color: #3b125f; /* Тёмно-фиолетовый фон */
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;       /* Запрет переноса внутри тэга */
+  }
+  
+  
+  /* Изображение поста */
+  .image-container {
+    text-align: center;
+    margin: 17px 0;
+    padding: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #000;
+  }
+  
+  /* Кнопка "Читать" */
+  .read-button-container {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .read-button {
+    background-color: transparent;
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .read-button:hover {
+    background-color: #00bfff22;
+  }
+  
+  /* Лайки/дизлайки */
+  .likes-info {
+    text-align: center;
+    margin-top: 10px;
+    color: #bbbbbb;
+    font-size: 0.95rem;
+  }
+  

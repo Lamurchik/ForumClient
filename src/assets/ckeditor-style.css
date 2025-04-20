@@ -1,0 +1,21 @@
+/* Фон и цвет текста в iframe (редакторе) */
+body.editor-dark-body {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    caret-color: #ffffff;
+  }
+  
+  /* Выделение */
+  body.editor-dark-body ::selection {
+    background: #555 !important;
+    color: #fff !important;
+  }
+  
+  /* Ссылки */
+  body.editor-dark-body a {
+    color: #8ab4f8 !important;
+  }
+  
+  

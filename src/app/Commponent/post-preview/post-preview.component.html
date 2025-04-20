@@ -1,0 +1,38 @@
+<div class="post-card">
+    <!-- Автор и дата -->
+    <div class="post-header">
+      <span class="author">{{ post.user?.nickName }}</span>
+      <span class="date">{{ post.dateCreate }} {{ post.timeCreate }}</span>
+    </div>
+  
+    <!-- Заголовок -->
+    <h2 class="post-title">{{ post.title }}</h2>
+  
+    <!-- Тэги -->
+   <!-- Тэги -->
+   <ul class="tags">
+    @for (tag of post.tags; track tag.id) {
+      <li class="tag">{{ tag.name }}</li>
+    }
+  </ul>
+  
+  
+  
+    <!-- Картинка -->
+    <div class="image-container" >
+      <img [src]="post.getImage" alt="Post image" />
+    </div>
+  
+    <!-- Кнопка "Читать" -->
+    <div class="read-button-container">
+      <button class="read-button" (click)="onReadPost()">Читать</button>
+    </div>
+  
+    <!-- Лайки и дизлайки -->
+    <div class="likes-info">
+        👍 {{ getLikeCount() }}
+        &nbsp;&nbsp;
+        👎 {{ getDislikeCount() }}
+    </div>
+  </div>
+  

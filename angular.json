@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "projects": {
+      "forumclient": {
+        "projectType": "application",
+        "root": "",
+        "sourceRoot": "src",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/forumclient",
+              "index": "src/index.html",
+              "main": "src/main.ts",
+              "polyfills": ["zone.js"],
+              "tsConfig": "tsconfig.json",
+              "aot": true,
+              "styles": ["src/app/styles/main.css"],
+              "assets": ["src/assets"]
+            }
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "buildTarget": "forumclient:build"
+            }
+          }
+        }
+      }
+    },
+    "cli": {
+      "analytics": "44f2a533-016c-4f8f-b3c2-7204b0f343f5"
+    }
+  }

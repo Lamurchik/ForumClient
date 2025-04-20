@@ -1,0 +1,50 @@
+<!-- Обёртка для центрирования формы на странице -->
+<div class="login-container">
+    <!-- Заголовок формы -->
+    <h2>Вход в систему</h2>
+  
+    <!-- Форма с обработчиком отправки (onSubmit) -->
+    <form (ngSubmit)="onSubmit()">
+      <!-- Поле для email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="email" 
+          required 
+          placeholder="Введите ваш email"
+        >
+      </div>
+  
+      <!-- Поле для пароля с переключателем видимости -->
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <div class="password-input">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="password" 
+            required 
+            placeholder="Введите пароль"
+          >
+          <!-- Кнопка-глазок для показа пароля -->
+          <button 
+            type="button" 
+            class="toggle-password" 
+            [class.closed]="!showPassword"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="showPassword ? 'Скрыть пароль' : 'Показать пароль'"
+          >
+          {{ eyeIcon }} <!-- Символ глаза (можно заменить на иконку из CSS) -->
+          </button>
+        </div>
+      </div>
+  
+      <!-- Кнопка отправки формы -->
+      <button type="submit" class="submit-btn">Войти</button>
+      <a href="register" class="link">зарегистрироваться</a>
+    </form>
+  </div>

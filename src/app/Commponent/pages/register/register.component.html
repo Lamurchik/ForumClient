@@ -1,0 +1,63 @@
+<!-- Обёртка для центрирования формы на странице -->
+<div class="login-container">
+    <!-- Заголовок формы -->
+    <h2>Регистрация</h2>
+  
+    <!-- Форма с обработчиком отправки (onSubmit) -->
+    <form (ngSubmit)="onSubmit()">
+
+        <!--поля для никнейма-->
+        <div class="form-group">
+            <label for="nickName">Имя</label>
+            <input 
+              type="text" 
+              id="nickName" 
+              name="nickName" 
+              [(ngModel)]="nickName" 
+              required 
+              placeholder="Введите ваше Имя"
+            >
+          </div>
+
+      <!-- Поле для email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="email" 
+          required 
+          placeholder="Введите ваш email"
+        >
+      </div>
+  
+      <!-- Поле для пароля с переключателем видимости -->
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <div class="password-input">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="password" 
+            required 
+            placeholder="Введите пароль"
+          >
+          <!-- Кнопка-глазок для показа пароля -->
+          <button 
+            type="button" 
+            class="toggle-password" 
+            [class.closed]="!showPassword"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="showPassword ? 'Скрыть пароль' : 'Показать пароль'"
+          >
+          {{ eyeIcon }} <!-- Символ глаза (можно заменить на иконку из CSS) -->
+          </button>
+        </div>
+      </div>
+  
+      <!-- Кнопка отправки формы -->
+      <button type="submit" class="submit-btn">Создать акаунт</button>
+    </form>
+  </div>

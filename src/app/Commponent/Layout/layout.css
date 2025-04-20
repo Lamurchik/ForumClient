@@ -1,0 +1,149 @@
+/* layout.css - стили, специфичные для layout страницы */
+@import "/src/app/styles/main.css";
+
+
+
+
+/* Сброс стилей */
+*{
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Основной контейнер страницы: фиксированная ширина, отступы и фон */
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0px;
+  background-color: #1e1e1e;
+  color: var(--caml-text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для шапки сайта */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px ;
+  border-bottom: 1px solid #333;
+}
+
+/* Левая часть шапки: логотип и навигация */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Стили для логотипа */
+.logo a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f1f1f1;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Основные навигационные ссылки */
+.main-nav a {
+  margin-right: 15px;
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Центральная часть шапки: поисковая форма */
+.header-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-center form {
+  display: flex;
+}
+
+.header-center input[type="text"] {
+  padding: 5px 10px;
+  border: 1px solid #444;
+  border-radius: 4px 0 0 4px;
+  background-color: var(--background-color);
+  color: var(--caml-text-color);
+  outline: none;
+  font-size: 12px;
+  width: calc(100% + 30%);
+}
+
+.header-center button {
+  padding: 5px 15px;
+  border: 1px solid #444;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #444;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.header-center button:hover {
+  background-color: #555;
+}
+
+/* Правая часть шапки: навигация для пользователя */
+.header-right .user-nav a {
+  margin-left: 15px;
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.header-right .user-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для основного контента */
+main {
+  padding: 0px 0;
+  flex: 1;
+}
+
+/* Стили для подвала сайта */
+footer {
+  border-top: 1px solid #333;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: auto;
+}
+
+.contact-info a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-extra a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-extra a:hover {
+  text-decoration: underline;
+}
