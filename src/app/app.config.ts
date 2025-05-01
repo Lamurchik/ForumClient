@@ -8,14 +8,17 @@ import { LayoutComponent } from "./Commponent/Layout/layout.component";
 import {LoginComponent} from "./Commponent/pages/login/login.component"
 import {EditorComponent} from "./Commponent/Editor/editor.component"
 import {RegisterComponent} from "./Commponent/pages/register/register.component"
-
+import {PostComponent} from  "./Commponent/pages/post/post.component"
+import {PostWorkComponent} from "./Commponent/pages/post-work/post-work"
  
 
 const routes: Routes = [
     {
         path: "", component: LayoutComponent, children: [
             { path: "", component: HomeComponent },
-            {path: "editor", component : EditorComponent}
+            {path: "editor", component : EditorComponent},
+            {path: "post-work" , component :PostWorkComponent},
+            {path: "post/:id", component : PostComponent}
         ]
     },
     {path: "login" , component : LoginComponent}, 

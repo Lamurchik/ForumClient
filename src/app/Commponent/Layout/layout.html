@@ -26,10 +26,17 @@
       <!-- Правая часть шапки: ссылки для пользователя -->
       <div class="header-right">
         <nav class="user-nav">
-          <a href="login">Вход</a>
-          <a href="#profile">Личный кабинет</a>
-          <a href="editor">написать пост</a>
-          <a href="#notifications">Уведомления</a>
+          @if(token)
+          {
+            <a href="#profile">Личный кабинет</a>
+            <a href="post-work">написать пост</a>
+            <a href="#notifications">Уведомления</a>
+          }
+          @else
+          {
+            <a href="login">Вход</a>
+          }
+          
         </nav>
       </div>
     </header>

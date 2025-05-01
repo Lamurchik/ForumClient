@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 declare var CKEDITOR: any;
 
@@ -29,7 +29,7 @@ export class EditorComponent implements AfterViewInit {
         styles: { 'background-color': '#000000' } // фон маркера (можно #333 для контраста)
       },
       toolbar: [
-        { name: 'document', items: ['Source', '-', 'Preview'] },
+        { name: 'document', items: [ 'Preview'] }, //'Source', '-',
         { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'Undo', 'Redo'] },
         { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll'] },
         { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
@@ -38,17 +38,16 @@ export class EditorComponent implements AfterViewInit {
         { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
         { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
         { name: 'links', items: ['Link', 'Unlink'] },
-        { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+        { name: 'tools', items: [ 'ShowBlocks'] }
       ]
     });
 
     // Устанавливаем данные после инициализации
     editor.on('instanceReady', () => {
       editor.setData(this.initialContent);
-    });
-
-    
+    });    
   }
+
 
   getData(): string {
     return CKEDITOR.instances['editor1'].getData();

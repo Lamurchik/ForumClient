@@ -22,6 +22,10 @@
     <div class="image-container" >
       <img [src]="post.getImage" alt="Post image" />
     </div>
+
+    <!-- Первый абзац (субтайтл) -->
+    <div class="subtitle" [innerHTML]="getFirstParagraph()"></div>
+
   
     <!-- Кнопка "Читать" -->
     <div class="read-button-container">

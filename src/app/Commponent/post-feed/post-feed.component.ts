@@ -12,5 +12,5 @@ import { Post } from "../../model/post.model";
 })
 
 export class PostFeedComponent {
-@Input() posts : Post[] = [{id: 1}, {id: 2}, {id:3}];
+@Input() posts : Post[] = [{id : 5}, {id: 6}];
 }

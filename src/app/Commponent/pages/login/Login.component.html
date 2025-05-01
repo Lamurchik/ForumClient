@@ -2,7 +2,9 @@
 <div class="login-container">
     <!-- Заголовок формы -->
     <h2>Вход в систему</h2>
-  
+
+    
+
     <!-- Форма с обработчиком отправки (onSubmit) -->
     <form (ngSubmit)="onSubmit()">
       <!-- Поле для email -->
@@ -17,7 +19,10 @@
           placeholder="Введите ваш email"
         >
       </div>
-  
+
+     
+
+
       <!-- Поле для пароля с переключателем видимости -->
       <div class="form-group">
         <label for="password">Пароль</label>
@@ -42,6 +47,14 @@
           </button>
         </div>
       </div>
+
+       <!--если ошибка-->
+       @if(errorMessage)
+       {
+         <div  class="error-message">
+           {{ errorMessage }}
+         </div>
+       }
   
       <!-- Кнопка отправки формы -->
       <button type="submit" class="submit-btn">Войти</button>

@@ -1,0 +1,33 @@
+<div class="form-container"> 
+  <!-- Заголовок поста -->
+  <p>
+    <label>Заголовок</label>
+    @if(titleRequired)
+    {
+      <label class="error-label" >заголовк обязателен для публикации поста</label>
+    }
+      <textarea [(ngModel)]="title" #myTextarea></textarea>
+  </p>
+  
+    <!-- Загрузка изображения + превью -->
+    <p class="file-upload">
+      <label for="postImage">Обложка поста</label>
+      <input id="postImage" type="file" accept=".jpg,.png" (change)="onFileSelected($event)">
+    </p>
+  
+    @if (imagePreviewUrl) {
+      <div class="image-container">
+        <img [src]="imagePreviewUrl" alt="Выбранное изображение">
+      </div>
+    }    
+  </div>
+  @if(bodyRequired)
+  {
+    <label class="error-label-body" #editor>пост не должен быть пустым</label>
+  }
+  <app-editor></app-editor>
+
+
+
+
+<button class="save-post-btn" (click)="savePost()">Сохранить пост</button>

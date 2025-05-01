@@ -14,9 +14,7 @@ import {PostFeedComponent} from  "../../post-feed/post-feed.component"
 })
 export class HomeComponent {
     answer : any;
-
      constructor(private QLService: GraphQLService ){}
-
      query = {
         query: `
           query {

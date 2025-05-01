@@ -8,5 +8,9 @@ import { RouterModule } from "@angular/router";
     styleUrls: ["./layout.css" ]
 })
 export class LayoutComponent { 
+  token : string | null;
 
+  ngOnInit(){
+    this.token = localStorage.getItem('token');   
+  }
 }

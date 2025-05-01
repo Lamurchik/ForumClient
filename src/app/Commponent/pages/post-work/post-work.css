@@ -1,0 +1,121 @@
+/* Контейнер формы */
+.form-container p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    width: 60%;
+    max-width: 600px;
+  }
+  
+  /* Метки */
+  .form-container label {
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  /* Текстовое поле */
+  .form-container textarea {
+    width: 80%;
+    min-height: 40px;
+    max-height: 80px;
+    padding: 7px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  
+  /* Кнопка выбора файла */
+  input[type="file"] {
+    background-color: #333;
+    color: #ccc;
+    border: 1px solid #555;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  input[type="file"]::file-selector-button {
+    background-color: #444;
+    border: none;
+    padding: 6px 10px;
+    color: #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  input[type="file"]:hover::file-selector-button {
+    background-color: #666;
+  }
+  
+  /* Превью изображения */
+  .image-container {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    background-color: #222;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #000;
+  }
+  
+
+  .save-post-btn {
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+  
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  .save-post-btn:hover {
+    background-color: #1565c0;
+  }
+  .error-label {
+    color: #ff4d4d !important;           /* Яркий красный цвет ошибки */
+    font-size: 0.7rem !important;
+    margin-top: 5px;
+    font-weight: bold;
+    
+    display: block;           /* Чтобы перенести текст на новую строку */
+  }
+
+  .error-label-body{
+    text-align: center !important;
+    font-size: 15px !important;
+    color: #ff4d4d !important;           /* Яркий красный цвет ошибки */ 
+    margin-top: 15px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    
+    display: block; 
+  }
+  
+  

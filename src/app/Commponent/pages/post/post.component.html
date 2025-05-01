@@ -1,0 +1,38 @@
+<div class="post-page">
+
+    <!-- Автор и дата -->
+    <div class="post-meta">
+      <span class="author">{{ post.user?.nickName }}</span>
+      <span class="date">{{ post.dateCreate }} {{ post.timeCreate }}</span>
+    </div>
+  
+    <!-- Заголовок -->
+    <h1 class="post-title">{{ post.title }}</h1>
+  
+    <!-- Изображение -->
+    <div class="post-image" *ngIf="post.getImage">
+      <img [src]="post.getImage" alt="Post image" />
+    </div>
+  
+    <!-- Тело поста -->
+    <div class="post-body" [innerHTML]="post.body"></div>
+  
+    <!-- Тэги -->
+    <div class="post-tags">
+      <span class="tag-label">Тэги:</span>
+      <ul class="tags">
+        @for (tag of post.tags; track tag.id) {
+          <li class="tag">{{ tag.name }}</li>
+        }
+      </ul>
+    </div>
+  
+    <!-- Лайки / Дизлайки -->
+    <div class="likes-info">
+        👍 {{ getLikeCount() }}
+        &nbsp;&nbsp;
+        👎 {{ getDislikeCount() }}
+    </div>
+  
+  </div>
+  
