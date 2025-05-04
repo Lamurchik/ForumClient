@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import {PostPreviewComponent} from "../post-preview/post-preview.component"
 import { Post } from "../../model/post.model";
 
@@ -13,4 +13,13 @@ import { Post } from "../../model/post.model";
 
 export class PostFeedComponent {
 @Input() posts : Post[] = [{id : 5}, {id: 6}];
+ngOnInit(): void {
+    console.log("PostFeedComponent получил: ",this.posts); //undfind
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['posts']) {
+      console.log('PostFeedComponent получил:', this.posts);
+    }
+}
 }

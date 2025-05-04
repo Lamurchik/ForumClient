@@ -31,7 +31,7 @@ export class GraphQLService{
       localStorage.removeItem('userId');
     }
   
-    RequestString<T>(body: { query: string }): Observable<T> {
+    RequestString<T>(body: { query }): Observable<T> {
       let headersConfig: any = {
         'Content-Type': 'application/json'
       };

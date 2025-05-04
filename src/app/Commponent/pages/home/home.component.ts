@@ -8,7 +8,7 @@ import {PostFeedComponent} from  "../../post-feed/post-feed.component"
 
 @Component({
     selector: "home-app",
-    imports: [CommonModule, PostPreviewComponent, PostFeedComponent],
+    imports: [CommonModule, PostFeedComponent],
     standalone: true,
     templateUrl: "./home.component.html" 
 })
@@ -32,5 +32,6 @@ export class HomeComponent {
         this.QLService.RequestString<any>(this.query).subscribe(res => {
             this.answer = res;
           });
+          console.log("главная");
      }
  }           

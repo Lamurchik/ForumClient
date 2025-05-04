@@ -1,0 +1,13 @@
+
+<pre>{{posts | json}}</pre>
+
+  <app-post-feed [posts]="posts"></app-post-feed>
+  
+  <div class="pagination-controls">
+    @if (hasPreviousPage) {
+      <button (click)="previousPage()">Назад</button>
+    }    
+    @if (hasNextPage) {
+      <button (click)="nextPage()">Вперед</button>
+    }
+  </div>
