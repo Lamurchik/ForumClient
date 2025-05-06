@@ -15,8 +15,10 @@
       "lib": [
         "ES2022",
         "dom"
-      ]
+      ],
+      "strictPropertyInitialization": false
     },
-      "files": [ "src/main.ts" ],
-      "include": [ "src/**/*.d.ts"]
+    "angularCompilerOptions" : {},
+    "files":[ "src/main.ts" ],
+    "include": [ "src/**/*.d.ts"]
   }

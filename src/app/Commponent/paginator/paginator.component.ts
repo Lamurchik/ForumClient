@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit, ChangeDetectorRef, OnChanges } from '@angular/core';
 import { catchError, finalize } from 'rxjs/operators';
 import { Post } from '../../model/post.model';
@@ -6,43 +7,39 @@ import {PostFeedComponent} from '../post-feed/post-feed.component'
 import { DatePipe } from "@angular/common";
 import {GraphQLService} from '../..//services/grapql.service'
 import { CommonModule } from '@angular/common';
-@Component({
-  selector: 'app-post-paginator',
-  templateUrl: './post-paginator.component.html',
-  styleUrls: ['./post-paginator.component.css'],
-  imports : [PostFeedComponent, CommonModule],
-  standalone: true
-})
-export class PostPaginatorComponent implements OnInit, OnChanges {
-  posts: Post[] = [];
-  currentStartCursor?: string;
-  currentEndCursor?: string;
-  hasNextPage: boolean = true;
-  hasPreviousPage: boolean = false;
-  totalCount: number = 0;
-  loading: boolean = false;
-  pageSize: number = 10;
-  str : string = "хуй";
 
-  constructor(private graphQLService: GraphQLService, private cdr: ChangeDetectorRef) {
+@Component({
+    standalone: true,
+    selector: 'app-paginator',
+    templateUrl: './paginator.component.html',
+    styleUrls: ['./paginator.component.css'],
+    imports : [PostFeedComponent, CommonModule]
+  })
+export class PaginatorComponent {
+    str : string = "строка ";
+   @Input() str2 : string ="cnhjrf bygenf";
+   posts : Post[] = [{id:1}, {id:2}];
+
+   //не моя херь 
+   currentStartCursor?: string;
+   currentEndCursor?: string;
+   hasNextPage: boolean = true;
+   hasPreviousPage: boolean = false;
+   totalCount: number = 0;
+   loading: boolean = false;
+   pageSize: number = 2;
+
+   constructor(private graphQLService: GraphQLService, private cdr: ChangeDetectorRef) {
     console.log("коструктор");
     console.log('Данные которые передаём коструктор', this.posts); // теперь будет корректно
-   }
-   ngOnChanges() {
-       
-    console.log(`OnChanges Paginator`);
-  }
-
-    ngOnInit(): void {
-    this.loading = true;
     this.loadPosts().then(() => {
-      this.loading = false;
-      console.log('Данные которые переданы в ngOnInit после загрузки:', this.posts);
-    });
-  }
+        this.loading = false;
+        console.log('Данные loadPosts коструктор', this.posts);
+      });
+   }
 
-  //first: ${after ? this.pageSize : "null"}
-  private async loadPosts(before?: string, after?: string): Promise<void> {
+   //руина
+   private async loadPosts(before?: string, after?: string): Promise<void> {
     this.loading = true;
     const query =  `
       query  {
@@ -64,6 +61,8 @@ export class PostPaginatorComponent implements OnInit, OnChanges {
           nodes {
             title
             id
+            timeCreate
+            dateCreate
             getImage
             user {
               nickName
@@ -103,9 +102,9 @@ export class PostPaginatorComponent implements OnInit, OnChanges {
      finally {
       this.loading = false;
       this.cdr.detectChanges();
-    }
-  
+    } 
   }
+
   nextPage() {
     if (this.hasNextPage) {
       this.loadPosts(undefined, this.currentEndCursor);
@@ -117,5 +116,3 @@ export class PostPaginatorComponent implements OnInit, OnChanges {
     }
   }
 }
-
-

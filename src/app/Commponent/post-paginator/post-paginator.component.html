@@ -1,9 +1,15 @@
-
+<!--ничего не отображаеться несмотря на то что в posts есть данные по молчанию-->
+<!--это происходит поскольку в момент рендера posts === undfaind -->
 <pre>{{posts | json}}</pre>
-
-  <app-post-feed [posts]="posts"></app-post-feed>
+<label>{{str}}</label>
+<!--label отображаеться-->
+<label> авава</label>
+<label> {{posts}}</label>
+<!--компонент ниже вседа получает undfaind -->
+  <app-post-feed [posts]="posts" [data]="str"></app-post-feed>
   
   <div class="pagination-controls">
+    <!--обе кнопки не отображаються т.к в момент рендера обе переменые равны undfaind-->
     @if (hasPreviousPage) {
       <button (click)="previousPage()">Назад</button>
     }    

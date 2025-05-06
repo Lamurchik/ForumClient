@@ -1,7 +1,7 @@
 
 <div class="post-feed-container">
-    @for (post of posts; track post.id) {
-      <app-post-preview  ></app-post-preview> <!--добавит:  [post]="post"  -->
+  
+    @for (post of posts; track post.id) {  
+      <app-post-preview [post]="post"></app-post-preview> <!--добавить:  [post]="post" --тоже получает ничего  -->
     }
   </div>
-  

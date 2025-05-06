@@ -1,11 +1,14 @@
 import { Component, Input } from "@angular/core";
 import { Post } from "../../model/post.model";
 import {Router} from "@angular/router";
+import { DatePipe } from "@angular/common";
+
 @Component({
     selector: "app-post-preview",
     standalone: true,
     templateUrl: './post-preview.component.html',
-    styleUrl: './post-preview.component.css'
+    styleUrl: './post-preview.component.css',
+    imports : [DatePipe]
 
 })
 
@@ -43,7 +46,9 @@ export class PostPreviewComponent{
   };
 //../../../assets/image/Kartinka.jpg
 
-  constructor(private router: Router){}
+  constructor(private router: Router){
+    //console.log("PostPreviewComponent получил:", this.post);
+  }
 
 
   onReadPost() : void{

@@ -1,0 +1,32 @@
+<div class="pagination-controls">
+    @if (hasPreviousPage) {
+      <button class="pagination-button" (click)="previousPage()">Назад</button>
+    } @else {
+      <button class="pagination-button pagination-button-disabled">Назад</button>
+    }
+  
+    @if (hasNextPage) {
+      <button class="pagination-button" (click)="nextPage()">Вперед</button>
+    } @else {
+      <button class="pagination-button pagination-button-disabled">Вперед</button>
+    }
+  </div>
+
+
+
+<app-post-feed [posts] = "posts"> </app-post-feed>
+
+
+<div class="pagination-controls">
+    @if (hasPreviousPage) {
+      <button class="pagination-button" (click)="previousPage()">Назад</button>
+    } @else {
+      <button class="pagination-button pagination-button-disabled">Назад</button>
+    }
+  
+    @if (hasNextPage) {
+      <button class="pagination-button" (click)="nextPage()">Вперед</button>
+    } @else {
+      <button class="pagination-button pagination-button-disabled">Вперед</button>
+    }
+  </div>

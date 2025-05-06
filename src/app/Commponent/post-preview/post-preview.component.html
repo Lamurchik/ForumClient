@@ -2,7 +2,7 @@
     <!-- Автор и дата -->
     <div class="post-header">
       <span class="author">{{ post.user?.nickName }}</span>
-      <span class="date">{{ post.dateCreate }} {{ post.timeCreate }}</span>
+      <span class="date">{{ post.dateCreate | date}} {{ post.timeCreate }}</span>
     </div>
   
     <!-- Заголовок -->
@@ -20,7 +20,13 @@
   
     <!-- Картинка -->
     <div class="image-container" >
-      <img [src]="post.getImage" alt="Post image" />
+      @if(post.getImage)
+      {
+        <img [src]="post.getImage" alt="Post image" />
+      }
+      @else{
+        <img src="https://sitespectr.ru/wp-content/uploads/2023/09/2022-11-19_085523.jpg" alt="Post image" />
+      }
     </div>
 
     <!-- Первый абзац (субтайтл) -->
